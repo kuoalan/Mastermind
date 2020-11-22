@@ -2,6 +2,7 @@ import tkinter as tk
 import random
 from tkinter import messagebox as mb
 
+# Setting up initial window
 window = tk.Tk()
 window.geometry("275x350")
 window.resizable(0,0)
