@@ -10,6 +10,9 @@ Single player implementation of the classic Mastermind game in Python 3 with tki
 #### Keeps track of game state
 ## Requirements
 ### Python 3
+`apt-get install python3`
+### Tkinter (if using a Python 3 version prior to Python 3.7)
+`apt-get install python3-tk`
 ## Instructions
 ### Run `python3 mastermind.py`
 
