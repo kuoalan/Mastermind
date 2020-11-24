@@ -13,14 +13,18 @@ color_map = {1:"blue", 2:"red", 3:"green", 4:"yellow", 5:"purple", 6:"white"}
 
 
 class Square(object):
-
+    """
+    Represents a square used by player to input a guess.
+    """
     def __init__(self, canvas, coords):
         self.curr_color = 1
         self.canvas = canvas
         self.id = self.canvas.create_rectangle(coords, fill="blue")
+        # Binds color changing function to left mouse click
         self.canvas.tag_bind(self.id, "<Button-1>", self.next_color)
 
     def next_color(self, event=None):
+        """Function for changing color of Square to next color in order"""
         if self.curr_color <= 5:
             self.curr_color += 1
         else:
@@ -28,9 +32,11 @@ class Square(object):
         self.canvas.itemconfigure(self.id, fill=color_map[self.curr_color])
 
     def change_color(self, color):
+        """Function for changing color of Square to a specific color passed in as parameter"""
         self.canvas.itemconfigure(self.id, fill=color_map[color])
 
     def disable(self):
+        """Function for disabling color changing on click"""
         self.canvas.tag_unbind(self.id, "<Button-1>")
 
 class Solution(object):
@@ -44,10 +50,8 @@ class Solution(object):
         matches = 0
         for num in self._solution:
             sol_count[num] = self._solution.count(num)
-        print(sol_count)
         for num in guess:
             guess_count[num] = guess.count(num)
-        print(guess_count)
         for key in guess_count:
             if key in sol_count:
                 if sol_count[key] < guess_count[key]:
