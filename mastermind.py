@@ -77,7 +77,7 @@ class GUI(object):
     def lose_message(self):
         mb.showinfo("You lost!", "Too bad, you didn't figure out the code! Please click New Game to try again.")
     def show_instructions(self):
-        mb.showinfo("Instructions", "The evil computer has created a code of 4 colors (duplicate colors allowed!), and your job is to figure it out before it's too late!\n\nYou will have 8 tries, and you will receive feedback for each incorrect guess.\n\nA black circle means that you have entered a correct color in the correct position.\n\nA white circle means that you entered have a correct color in the incorrect position\n\nGood luck!")
+        mb.showinfo("Instructions", "The evil computer has created a code of 4 colors (duplicate colors allowed!), and your job is to figure it out before it's too late!\n\nYou will have 8 tries, and you will receive feedback for each incorrect guess.\n\nA black circle means that you have entered a correct color in the correct position.\n\nA white circle means that you have entered a correct color in the incorrect position\n\nGood luck!")
     def disable_inputs(self):
         self.submit_button["state"] = "disabled"
         self.submit_button.config(text="Correct answer")
