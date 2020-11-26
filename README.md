@@ -17,6 +17,6 @@ For Linux: `$sudo apt-get install python3`
 ### tkinter (if using a Python 3 version prior to Python 3.7)
 Recent versions of Python should include tk/tkinter as part of a standard installation. 
 
-If tk/tkinter are not installed, run: `pip install python3-tk`
+If tk/tkinter are not installed, run: `pip install python3-tk'` from the command line.
 ## Instructions
-Run `python3 mastermind.py`from the command line
+Run `python3 mastermind.py`from the command line.
