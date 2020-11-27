@@ -1,3 +1,4 @@
+# Importing modules
 import tkinter as tk
 import random
 from tkinter import messagebox as mb
@@ -14,9 +15,15 @@ color_map = {1:"blue", 2:"red", 3:"green", 4:"yellow", 5:"purple", 6:"white"}
 
 class Square(object):
     """
-    Represents a square used by player to input a guess.
+    Represents a square used by player to input a guess in the interface.
     """
     def __init__(self, canvas, coords):
+        """
+
+        :param canvas: The canvas the square is drawn on
+        :param coords: Coordinates used to draw the square
+        """
+        # Initializing color to blue
         self.curr_color = 1
         self.canvas = canvas
         self.id = self.canvas.create_rectangle(coords, fill="blue")
@@ -40,35 +47,46 @@ class Square(object):
         self.canvas.tag_unbind(self.id, "<Button-1>")
 
 class Solution(object):
+    """
+    Represents the solution code for an instance of the game
+    """
     def __init__(self):
-        self._solution = [random.randint(1,6) for _ in range(4)]
+        """
+        Initializes value of solution
+        """
+        self.solution = [random.randint(1, 6) for _ in range(4)]
+        self.sol_count = {}
+        for num in self.solution:
+            self.sol_count[num] = self.solution.count(num)
+
 
     def check_guess(self, guess):
-        sol_count = {}
+        """
+        Function for checking a user-provided guess against solution. Returns feedback on accuracy.
+        Black pegs represent correct color in correct place. White pegs represent correct color in incorrect place.
+
+        :param guess: Passing in guess input by user as an array
+        :return: Returns number of black and white pegs as a tuple.
+        """
+        # Initializing dictionary to hold guess information and variables
         guess_count = {}
         black_pegs = 0
         matches = 0
-        for num in self._solution:
-            sol_count[num] = self._solution.count(num)
+        # Getting counts of each color in the guess and comparing to the solution
         for num in guess:
             guess_count[num] = guess.count(num)
         for key in guess_count:
-            if key in sol_count:
-                if sol_count[key] < guess_count[key]:
-                    matches += sol_count[key]
+            if key in self.sol_count:
+                if self.sol_count[key] < guess_count[key]:
+                    matches += self.sol_count[key]
                 else:
                     matches += guess_count[key]
-        for i in range(4):
-            if self._solution[i] == guess[i]:
+        # Iterating through guess to get number of position matches
+        for i in range(len(guess)):
+            if self.solution[i] == guess[i]:
                 black_pegs += 1
         white_pegs = matches - black_pegs
         return black_pegs, white_pegs
-
-    def get_sol(self):
-        return self._solution
-
-
-
 
 
 class GUI(object):
@@ -118,7 +136,7 @@ class GUI(object):
         if self.guess_num == 9:
             self.lose_message()
             self.disable_inputs()
-            correct_sol = self.solution.get_sol()
+            correct_sol = self.solution.get_solution()
             print(correct_sol)
             self.square_1.change_color(correct_sol[0])
             print(correct_sol[0])
