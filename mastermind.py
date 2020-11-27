@@ -141,6 +141,16 @@ class GUI(object):
         # Creates instance of solution code
         self.solution = Solution()
 
+    def clear_board(self):
+        """
+        Function for clearing board of UI elements
+        :return:
+        """
+        ui_elements=[self.active_guess,self.submit_button,self.game_icon, self.game_name, self.guess_list, self.reset_button, self.info_button]
+        for element in ui_elements:
+            element.destroy()
+        self.reset_game()
+
     def victory_message(self):
         """
         Creates pop-up when player wins
@@ -235,17 +245,15 @@ class GUI(object):
             # Disable user input for making more guesses
             self.disable_inputs()
             # Switch active guess to show correct solution
-            correct_sol = self.solution.get_solution()
+            correct_sol = self.solution.solution
             self.square_1.change_color(correct_sol[0])
             self.square_2.change_color(correct_sol[1])
             self.square_3.change_color(correct_sol[2])
             self.square_4.change_color(correct_sol[3])
             return
-    def clear_board(self):
-        ui_elements=[self.active_guess,self.submit_button,self.game_icon, self.game_name, self.guess_list, self.reset_button, self.info_button]
-        for element in ui_elements:
-            element.destroy()
-        self.reset_game()
 
-game = GUI()
-window.mainloop()
+
+# Starts game if script is run directly
+if __name__ == '__main__':
+    game = GUI()
+    window.mainloop()
