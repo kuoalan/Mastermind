@@ -23,7 +23,7 @@ class Square(object):
         :param canvas: The canvas the square is drawn on
         :param coords: Coordinates used to draw the square
         """
-        # Initializing color to blue
+        # Initializing color to blue.
         self.curr_color = 1
         self.canvas = canvas
         self.id = self.canvas.create_rectangle(coords, fill="blue")
