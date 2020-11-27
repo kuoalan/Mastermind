@@ -1,8 +1,9 @@
 # Mastermind
 Single player graphical implementation of the classic Mastermind game in Python 3 using tkinter.
-
-<img src="https://github.com/kuoalan/Mastermind/blob/main/images/mastermind_screenshot.png" width="200">
-<img src="https://github.com/kuoalan/Mastermind/blob/main/images/mastermind_screenshot_2.png" width="200">
+<p float="left">
+  <img src="https://github.com/kuoalan/Mastermind/blob/main/images/mastermind_screenshot.png" width="200">
+  <img src="https://github.com/kuoalan/Mastermind/blob/main/images/mastermind_screenshot_2.png" width="200">
+</p>
 
 ## Features
 ### Fully playable single player mode
