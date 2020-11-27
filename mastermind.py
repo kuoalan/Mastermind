@@ -39,7 +39,7 @@ class Square(object):
         self.canvas.itemconfigure(self.id, fill=color_map[self.curr_color])
 
     def change_color(self, color):
-        """Function for changing color of Square to a specific color passed in as parameter"""
+        """Function for changing color of Square to a specific color passed in as parameter."""
         self.canvas.itemconfigure(self.id, fill=color_map[color])
 
     def disable(self):
