@@ -253,7 +253,7 @@ class GUI(object):
             return
 
 
-# Starts game if script is run directly
+# Starts game if script is run directly.
 if __name__ == '__main__':
     game = GUI()
     window.mainloop()
