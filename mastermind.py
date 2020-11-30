@@ -3,14 +3,7 @@ import tkinter as tk
 import random
 from tkinter import messagebox as mb
 
-# Setting up initial window dimensions, background color, title
-window = tk.Tk()
-window.geometry("275x350")
-window.resizable(0,0)
-window.configure(bg="#cdcfd1")
-window.title("MASTERMIND")
-# Creating mapping of colors to integers from 1 to 6
-color_map = {1:"blue", 2:"red", 3:"green", 4:"yellow", 5:"purple", 6:"white"}
+
 
 
 class Square(object):
@@ -253,7 +246,17 @@ class GUI(object):
             return
 
 
+
 # Starts game if script is run directly.
 if __name__ == '__main__':
+    # Setting up initial window dimensions, background color, title
+    window = tk.Tk()
+    window.geometry("275x350")
+    window.resizable(0, 0)
+    window.configure(bg="#cdcfd1")
+    window.title("MASTERMIND")
+    # Creating mapping of colors to integers from 1 to 6
+    color_map = {1: "blue", 2: "red", 3: "green", 4: "yellow", 5: "purple", 6: "white"}
+    # Starting game
     game = GUI()
     window.mainloop()

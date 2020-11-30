@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Solver function
+mastermind_solver.py
+solve.txt
+mastermind_verify.py
+verify.txt
