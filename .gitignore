@@ -129,7 +129,7 @@ dmypy.json
 .pyre/
 
 # Solver function
-mastermind_solver.py
-solve.txt
-mastermind_verify.py
-verify.txt
+/mastermind_solver.py
+/solve.txt
+/mastermind_verify.py
+/verify.txt

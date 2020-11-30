@@ -247,7 +247,7 @@ class GUI(object):
 
 
 
-# Starts game if script is run directly.
+# Starts new game if script is run directly.
 if __name__ == '__main__':
     # Setting up initial window dimensions, background color, title
     window = tk.Tk()
