@@ -195,7 +195,10 @@ class GUI(object):
         """
         self.submit_button["state"] = "disabled"
         self.submit_button.config(text="Correct answer")
-        self.submit_button.place(x=175, y=62)
+        if platform.system() == "Darwin":
+            self.submit_button.place(x=175, y=62)
+        else:
+            self.submit_button.place(x=172, y=62)
         self.square_1.disable()
         self.square_2.disable()
         self.square_3.disable()
