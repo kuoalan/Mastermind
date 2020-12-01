@@ -132,7 +132,7 @@ class GUI(object):
             self.submit_button = tk.Button(window, text="Submit Guess!", highlightbackground="#cdcfd1",
                                            highlightcolor="#cdcfd1", command=self.add_guess)
             self.reset_button.place(x=10, y=320)
-            self.submit_button.place(x=167, y=62)
+            self.submit_button.place(x=168, y=62)
             self.info_button.place(x=185, y=320)
         else:
             # Creating and placing label for game name
