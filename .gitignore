@@ -133,3 +133,5 @@ dmypy.json
 /solve.txt
 /mastermind_verify.py
 /verify.txt
+
+.idea/
