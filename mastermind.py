@@ -9,7 +9,7 @@ import platform
 
 class Square(object):
     """
-    Represents a square used by player to input a guess in the interface
+    Represents a square used by player to input a guess in the interface.
     """
     def __init__(self, canvas, coords):
         """
