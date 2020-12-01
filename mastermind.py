@@ -145,9 +145,9 @@ class GUI(object):
             self.guess_list.create_text(55, 15, font="Arial 12 bold", text="Guesses")
             self.guess_list.create_text(175, 15, font="Arial 12 bold", text="Score")
             # Creating and placing game reset button
-            self.reset_button.place(x=10, y=320)
+            self.reset_button.place(x=10, y=318)
             # Creating and placing game instruction button
-            self.info_button.place(x=190, y = 320)
+            self.info_button.place(x=190, y = 318)
             # Creating and placing button for submitting guess
             self.submit_button.place(x=175, y=62)
         # Creates instance of solution code
@@ -156,7 +156,7 @@ class GUI(object):
     def clear_board(self):
         """
         Function for clearing board of UI elements
-        :return:
+        :return: None
         """
         ui_elements=[self.active_guess,self.submit_button,self.game_icon, self.game_name, self.guess_list, self.reset_button, self.info_button]
         for element in ui_elements:
