@@ -2,6 +2,7 @@
 import tkinter as tk
 import random
 from tkinter import messagebox as mb
+import platform
 
 
 
@@ -106,12 +107,7 @@ class GUI(object):
         self.square_2 = Square(self.active_guess, (45, 10, 70, 35))
         self.square_3 = Square(self.active_guess, (80, 10, 105, 35))
         self.square_4 = Square(self.active_guess, (115, 10, 140, 35))
-        # Creating and placing button for submitting guess
-        self.submit_button = tk.Button(window, text="Submit Guess!", highlightbackground="#cdcfd1", highlightcolor="#cdcfd1", command=self.add_guess)
-        self.submit_button.place(x=167, y=62)
-        # Creating and placing label for game name
-        self.game_name = tk.Label(window, text="MASTERMIND", background="#cdcfd1", font="Arial 30 bold")
-        self.game_name.place(x=50, y=5)
+
         # Creating and placing brain icon. Brain icon from pixabay.com (no attribution required)
         self.brain_icon = tk.PhotoImage(file="brain_icon_small.gif")
         self.game_icon = tk.Label(image=self.brain_icon, background="#cdcfd1")
@@ -119,18 +115,41 @@ class GUI(object):
         # Creating canvas for drawing guesses on
         self.guess_list = tk.Canvas(window, width=250, height = 200, highlightthickness=0, background="#d9dadb", borderwidth=1, relief="groove")
         self.guess_list.place(x = 10, y = 110)
-        # Adding list of guess numbers
-        for i in range(8):
-            self.guess_list.create_text(10, 40+(i*20), font="Arial 12 bold", text = f"{i+1}.")
-        # Creating headers for guess list
-        self.guess_list.create_text(55,15, font="Arial 14 bold", text="Guesses")
-        self.guess_list.create_text(175,15, font="Arial 14 bold", text="Score")
-        # Creating and placing game reset button
-        self.reset_button = tk.Button(window, text="New Game", highlightbackground="#cdcfd1", highlightcolor="#cdcfd1", command=self.clear_board)
-        self.reset_button.place(x=8, y=320)
-        # Creating and placing game instruction button
-        self.info_button = tk.Button(window, text="Instructions", highlightbackground="#cdcfd1", highlightcolor="#cdcfd1", command=self.show_instructions)
-        self.info_button.place(x=185, y = 320)
+        self.reset_button = tk.Button(window, text="New Game", highlightbackground="#cdcfd1", highlightcolor="#cdcfd1",
+                                      command=self.clear_board)
+        self.info_button = tk.Button(window, text="Instructions", highlightbackground="#cdcfd1",
+                                     highlightcolor="#cdcfd1", command=self.show_instructions)
+        self.submit_button = tk.Button(window, text="Submit Guess!", highlightbackground="#cdcfd1",
+                                       highlightcolor="#cdcfd1", command=self.add_guess)
+
+        if platform.system() == 'Darwin':
+            self.game_name = tk.Label(window, text="MASTERMIND", background="#cdcfd1", font="Arial 30 bold")
+            self.game_name.place(x=50, y=5)
+            for i in range(8):
+                self.guess_list.create_text(10, 40 + (i * 20), font="Arial 12 bold", text=f"{i + 1}.")
+            self.guess_list.create_text(55, 15, font="Arial 14 bold", text="Guesses")
+            self.guess_list.create_text(175, 15, font="Arial 14 bold", text="Score")
+            self.submit_button = tk.Button(window, text="Submit Guess!", highlightbackground="#cdcfd1",
+                                           highlightcolor="#cdcfd1", command=self.add_guess)
+            self.reset_button.place(x=10, y=320)
+            self.submit_button.place(x=167, y=62)
+            self.info_button.place(x=185, y=320)
+        else:
+            # Creating and placing label for game name
+            self.game_name = tk.Label(window, text="MASTERMIND", background="#cdcfd1", font="Arial 20 bold")
+            self.game_name.place(x=55, y=5)
+            # Adding list of guess numbers
+            for i in range(8):
+                self.guess_list.create_text(10, 40+(i*20), font="Arial 10 bold", text = f"{i+1}.")
+            # Creating headers for guess list
+            self.guess_list.create_text(55, 15, font="Arial 12 bold", text="Guesses")
+            self.guess_list.create_text(175, 15, font="Arial 12 bold", text="Score")
+            # Creating and placing game reset button
+            self.reset_button.place(x=10, y=320)
+            # Creating and placing game instruction button
+            self.info_button.place(x=190, y = 320)
+            # Creating and placing button for submitting guess
+            self.submit_button.place(x=175, y=62)
         # Creates instance of solution code
         self.solution = Solution()
 
@@ -176,7 +195,7 @@ class GUI(object):
         """
         self.submit_button["state"] = "disabled"
         self.submit_button.config(text="Correct answer")
-        self.submit_button.place(x=167, y=62)
+        self.submit_button.place(x=175, y=62)
         self.square_1.disable()
         self.square_2.disable()
         self.square_3.disable()
