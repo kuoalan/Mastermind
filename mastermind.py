@@ -5,15 +5,12 @@ from tkinter import messagebox as mb
 import platform
 
 
-
-
 class Square(object):
     """
     Represents a square used by player to input a guess in the interface.
     """
     def __init__(self, canvas, coords):
         """
-
         :param canvas: The canvas the square is drawn on
         :param coords: Coordinates used to draw the square
         """
