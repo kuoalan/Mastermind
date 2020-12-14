@@ -7,7 +7,7 @@ Single player graphical implementation of the classic Mastermind game in Python 
 
 ## Features
 ### Fully playable single player mode
-* Creates randomized code for player to guess
+* Creates randomized code for the player to guess
 * Checks each guess and provides feedback to player for incorrect guesses
 * Determines if player has won or lost
 * Allows player to restart game
