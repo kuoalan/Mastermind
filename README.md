@@ -1,5 +1,5 @@
 # Mastermind
-Single player graphical implementation of the classic Mastermind game in Python 3 using tkinter.
+Single player graphical implementation of the classic <a href="https://en.wikipedia.org/wiki/Mastermind_(board_game)" target="_blank">Mastermind</a> game in Python 3 using tkinter.
 <p float="left">
   <img src="https://github.com/kuoalan/Mastermind/blob/main/images/mastermind_demo.gif" width="200">
 </p>
