@@ -20,5 +20,5 @@ Recent versions of Python should include tk/tkinter as part of a standard instal
 
 If tk/tkinter are not installed, run: `pip install python3-tk` from the command line.
 ## Instructions
-* Run `python3 mastermind.py`from the command line.
-* Press the `Instructions` 
+* To start the game, run `python3 mastermind.py`from the command line.
+* Press the `Instructions` button for more details on how to play.
